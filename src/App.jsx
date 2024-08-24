@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Icongrid from './Components/Icongrid'
 import Showcase from './Components/Showcase'
 import Review from './Components/Review'

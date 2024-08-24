@@ -67,16 +67,24 @@ let info  = [{
 } ]
 
 
-const rows = document.querySelectorAll('.showcase .row');
-    
+// This function alternates the layout
+  const alternateLayout = () => {
+    const rows = document.querySelectorAll('.showcase .row');
+
     rows.forEach((row, index) => {
-        const imgCol = row.querySelector('.showcase-img');
-        const textCol = row.querySelector('.showcase-text');
-        
-        if (index % 2 !== 0) { // For odd indices, swap the columns
-            row.insertBefore(textCol, imgCol);
-        }
+      const imgCol = row.querySelector('.showcase-img');
+      const textCol = row.querySelector('.showcase-text');
+
+      if (index % 2 !== 0) { // For odd indices, swap the columns
+        row.insertBefore(textCol, imgCol);
+      }
     });
+  };
+
+  // Use useEffect to run the alternateLayout function when the component mounts
+  useEffect(() => {
+    alternateLayout();
+  }, []); // Empty dependency array means this runs once after initial render
 
 
   return (
